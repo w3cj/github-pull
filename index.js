@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 
 app.post('/github', (req, res) => {
   console.log(req.body);
-  exec('cd ${process.env.DIRECTORY} && git pull', (error, stdout, stderr) => {
+  exec(`cd ${process.env.DIRECTORY} && git pull`, (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
       return;
